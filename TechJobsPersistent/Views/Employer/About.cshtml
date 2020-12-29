@@ -1,6 +1,8 @@
-﻿<h1>Employer: @ViewBag.employer.Name</h1>
+﻿@model List<TechJobsPersistent.Models.Employer>
+
+<h1>Employer: @Model[0].Name</h1>
 
 <div>
-    <p>Name: @ViewBag.employer.Name</p>
-    <p>Location: @ViewBag.employer.Location</p>
+    <p>Name: @Model[0].Name</p>
+    <p>Location: @Model[0].Location</p>
 </div>

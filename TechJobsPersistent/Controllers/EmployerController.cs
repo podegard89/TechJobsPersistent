@@ -56,13 +56,11 @@ namespace TechJobsPersistent.Controllers
 
         public IActionResult About(int id)
         {
-            List<Employer> employers = context.Employers.ToList();
+            List<Employer> employerAbout = context.Employers
+                .Where(e => e.Id == id)
+                .ToList();
 
-            Employer employer = employers.Where(e => e.Id == id).First();
-
-            ViewBag.employer = employer;
-
-            return View();
+            return View(employerAbout);
         }
     }
 }
