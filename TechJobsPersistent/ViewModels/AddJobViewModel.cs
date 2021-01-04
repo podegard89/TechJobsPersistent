@@ -14,12 +14,16 @@ namespace TechJobsPersistent.ViewModels
         public string Name { get; set; }
         public int EmployerId { get; set; }
         public List<Employer> SelectListItem { get; set; }
-        public List<JobSkill> SelectSkill { get; set; }
+        public List<Skill> SelectSkill { get; set; }
+        //public string[] Checked { get; set; }
 
-        public AddJobViewModel(List<Employer> employers, List<JobSkill> jobSkills)
+        public AddJobViewModel()
+        {
+        }
+        public AddJobViewModel(List<Employer> employers, List<Skill> skills)
         {
             SelectListItem = employers;
-            SelectSkill = jobSkills;
+            SelectSkill = skills;
         }
     }
 }
