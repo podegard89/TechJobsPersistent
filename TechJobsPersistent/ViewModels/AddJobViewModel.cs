@@ -15,7 +15,7 @@ namespace TechJobsPersistent.ViewModels
         public int EmployerId { get; set; }
         public List<Employer> SelectListItem { get; set; }
         public List<Skill> SelectSkill { get; set; }
-        //public string[] Checked { get; set; }
+        public string[] CheckedBoxes { get; set; }
 
         public AddJobViewModel()
         {

@@ -25,7 +25,14 @@
         <label>Select required skills for this job:</label><br />
         @foreach (Skill skill in Model.SelectSkill)
         {
-            <input type="checkbox" name="selectedSkills" value="@skill.Id"/>
+            @if (ViewBag.checkBoxes != null && Array.IndexOf(ViewBag.checkBoxes, skill.Id.ToString()) > -1)
+            {
+                <input type="checkbox" name="selectedSkills" value="@skill.Id" checked />
+            }
+            else
+            {
+                <input type="checkbox" name="selectedSkills" value="@skill.Id" />
+            }
             <label for="selectedSkills">@skill.Name</label><br />
         }
         <a asp-controller="Skill" asp-action="Add">If you do not see a skill you need, click here to add it now!</a>

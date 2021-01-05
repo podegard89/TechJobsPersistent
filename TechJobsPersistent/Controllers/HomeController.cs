@@ -51,7 +51,6 @@ namespace TechJobsPersistent.Controllers
                 };
                 foreach (String skill in selectedSkills)
                 {
-                    Console.WriteLine(viewModel);
                     JobSkill newJobSkill = new JobSkill
                     {
                         Skill = context.Skills.Find(int.Parse(skill)),
@@ -63,6 +62,7 @@ namespace TechJobsPersistent.Controllers
                 context.SaveChanges();
                 return Redirect("Index");
             }
+            ViewBag.checkedBoxes = selectedSkills;
             viewModel = new AddJobViewModel(context.Employers.ToList(), skills);
             return View("AddJob", viewModel);
         }
